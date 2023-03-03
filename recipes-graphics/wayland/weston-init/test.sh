@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "1. test led"
 ls /sys/class/leds

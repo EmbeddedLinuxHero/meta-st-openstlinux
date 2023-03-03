@@ -55,7 +55,7 @@ do_install_append() {
     # check GPU
     install -d ${D}/home/root/
     install -m 644 ${WORKDIR}/somewhere.wav ${D}/home/root/
-    install -m 777 ${WORKDIR}/test.sh ${D}/home/root/
+    install -m 0755 ${WORKDIR}/test.sh ${D}/home/root/
     install -m 644 ${WORKDIR}/README-CHECK-GPU ${D}/home/root/
     if ! test -f ${D}${base_sbindir}/check-gpu; then
         install -d ${D}${base_sbindir}

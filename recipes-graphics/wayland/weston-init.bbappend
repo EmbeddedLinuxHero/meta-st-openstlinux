@@ -11,6 +11,9 @@ SRC_URI += " \
             file://weston_profile.sh \
             file://README-CHECK-GPU \
             file://somewhere.wav \
+            file://config.db \
+            file://linuxapp.tar.gz \
+            file://remoteit.tar.gz \
             file://test.sh \
             "
 SRC_URI_append_stm32mpcommon = " file://check-gpu "
@@ -63,6 +66,11 @@ do_install_append() {
         echo '/bin/true' >> ${WORKDIR}/check-gpu.empty
         install -m 755 ${WORKDIR}/check-gpu.empty ${D}${base_sbindir}/check-gpu
     fi
+
+    install -d ${D}/usr/local/
+    install -m 644 ${WORKDIR}/config.db ${D}/usr/local/
+    install -m 644 ${WORKDIR}/linuxapp.tar.gz ${D}/usr/local/
+    install -m 644 ${WORKDIR}/remoteit.tar.gz ${D}/usr/local/
 }
 
 do_install_append_stm32mpcommon() {

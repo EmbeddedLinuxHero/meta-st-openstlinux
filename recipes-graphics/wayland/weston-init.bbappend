@@ -59,6 +59,9 @@ do_install_append() {
     install -d ${D}/home/root/
     install -m 644 ${WORKDIR}/somewhere.wav ${D}/home/root/
     install -m 0755 ${WORKDIR}/test.sh ${D}/home/root/
+    install -m 644 ${WORKDIR}/config.db ${D}/home/root/
+    install -m 644 ${WORKDIR}/linuxapp.tar.gz ${D}/home/root/
+    install -m 644 ${WORKDIR}/remoteit.tar.gz ${D}/home/root/
     install -m 644 ${WORKDIR}/README-CHECK-GPU ${D}/home/root/
     if ! test -f ${D}${base_sbindir}/check-gpu; then
         install -d ${D}${base_sbindir}
@@ -66,11 +69,6 @@ do_install_append() {
         echo '/bin/true' >> ${WORKDIR}/check-gpu.empty
         install -m 755 ${WORKDIR}/check-gpu.empty ${D}${base_sbindir}/check-gpu
     fi
-
-    install -d ${D}/usr/local/
-    install -m 644 ${WORKDIR}/config.db ${D}/usr/local/
-    install -m 644 ${WORKDIR}/linuxapp.tar.gz ${D}/usr/local/
-    install -m 644 ${WORKDIR}/remoteit.tar.gz ${D}/usr/local/
 }
 
 do_install_append_stm32mpcommon() {

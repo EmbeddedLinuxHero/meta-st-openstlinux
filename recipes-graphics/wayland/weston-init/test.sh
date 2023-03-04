@@ -15,5 +15,11 @@ i2cdetect -y 0
 echo "5. test i2c pmic"
 i2cdetect -y 3
 
-echo "6. test audio"
+echo "6. test uSD Card"
+cat /proc/partitions | grep mmcblk0
+
+echo "7. test ethernet"
+ifconfig
+
+echo "8. test audio"
 aplay -D plughw:CARD=STM32MP15DK /home/root/somewhere.wav

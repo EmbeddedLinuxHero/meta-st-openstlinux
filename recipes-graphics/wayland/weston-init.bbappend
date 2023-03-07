@@ -16,7 +16,6 @@ SRC_URI += " \
             file://remoteit.tar.gz;unpack=0 \
             file://test.sh \
             file://setup.sh \
-            file://test-4g \
             "
 SRC_URI_append_stm32mpcommon = " file://check-gpu "
 
@@ -63,7 +62,6 @@ do_install_append() {
     install -m 0755 ${WORKDIR}/test.sh ${D}/home/root/
     install -m 0755 ${WORKDIR}/setup.sh ${D}/home/root/
     install -m 0755 ${WORKDIR}/config.db ${D}/home/root/
-    install -m 0755 ${WORKDIR}/test-4g ${D}/home/root/
     install -m 0755 ${WORKDIR}/remoteit.tar.gz ${D}/home/root/
     install -m 0755 ${WORKDIR}/linuxapp.tar.gz ${D}/home/root/
     install -m 644 ${WORKDIR}/README-CHECK-GPU ${D}/home/root/

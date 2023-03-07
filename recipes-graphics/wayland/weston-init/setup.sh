@@ -21,9 +21,8 @@ cd $BASE_DIR/linuxapp/service
 echo "Run deploy script"
 ./deploy-script.sh
 
-echo "Play Music"
-amixer -q -D pulse sset Master 30%; aplay $HOME_DIR/somewhere.wav &
-
-echo "Settup remoteit"
+echo "Setup remoteit"
 cd $BASE_DIR/remoteit
 ./install.sh
+
+echo "========================="
